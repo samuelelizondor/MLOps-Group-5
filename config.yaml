@@ -1,0 +1,17 @@
+# config.yaml  [Settings: single source of truth]
+# -------------------------------------------------------------------
+# Purpose   Every NON-SECRET setting, in one place. Change behaviour without editing code
+# Read by   src/config.py, which main.py, api.py and notebooks all use
+# Never     Secrets. Those go in .env locally and in GitHub Secrets / host settings in the cloud
+#
+# Typical sections
+#   paths        raw data, processed data, model, inference data, predictions, log file
+#   logging      log level
+#   problem      target column, problem type, ID column
+#   split        test size, validation size, random seed
+#   training     model type and hyperparameters per problem type
+#   features     column lists per transformation (bin, one-hot, passthrough, derived)
+#   validation   business rules checked by validate.py
+#   evaluation   metrics, quality gate (metric + threshold), test audit on/off
+#   api          serving options (e.g. monitoring batch size)
+#   tracking     experiment tracking project, run name, tags, what to log
